@@ -1,12 +1,17 @@
-// api/api.js
 const axios = require('axios');
 const fs = require('fs');
 const { countItemsWithAge32 } = require('../utils/countAge32');
 const { calculateSHA1Hash } = require('../utils/calculateSHA1Hash');
 
+// Cargar las variables de entorno desde el archivo .env
+require('dotenv').config();
+
+// Obtener la URL de la API desde la variable de entorno
+const apiUrl = process.env.API_URL;
+
 async function fetchData() {
   try {
-    const response = await axios.get('https://coderbyte.com/api/challenges/json/age-counting');
+    const response = await axios.get(apiUrl); // Utiliza la variable de entorno en lugar de la URL directa
     return response.data.data;
   } catch (error) {
     throw new Error('Failed to fetch data from API');
