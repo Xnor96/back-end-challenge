@@ -27,4 +27,4 @@ main.js: Es el punto de entrada de la aplicación.
 # DEPENDENCIAS
 Este proyecto utiliza las siguientes dependencias:
 
-axios: Para realizar solicitudes HTTP a la API.
+axios: Para realizar solicitudes HTTP a la API.# back-end-challenge
